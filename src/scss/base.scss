@@ -1,0 +1,15 @@
+$mainColor: #3A3A3A;
+$orangeColor: #E89F71;
+$darkGrayColor: #898989;
+$grayColor: #D8D8D8;
+
+body {
+	color: $mainColor;
+	font-family: gilroy;
+	font-size: 16px;
+}
+
+.container {
+	max-width: 1270px;
+	padding: 0 15px;
+}
