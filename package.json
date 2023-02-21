@@ -1,5 +1,5 @@
 {
-	"name": "base-setting-for-gulp",
+	"name": "furnitureShop",
 	"version": "1.0.0",
 	"description": "",
 	"main": "gulpfile.js",
@@ -12,14 +12,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/tehnikDaniyar/base-setting-for-Gulp.git"
+		"url": "git+https://github.com/tehnikDaniyar/furnitureShop.git"
 	},
 	"author": "Danik",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/tehnikDaniyar/base-setting-for-Gulp/issues"
+		"url": "https://github.com/tehnikDaniyar/furnitureShop/issues"
 	},
-	"homepage": "https://github.com/tehnikDaniyar/base-setting-for-Gulp#readme",
+	"homepage": "https://github.com/tehnikDaniyar/furnitureShop#readme",
 	"devDependencies": {
 		"browser-sync": "^2.27.11",
 		"del": "^7.0.0",
