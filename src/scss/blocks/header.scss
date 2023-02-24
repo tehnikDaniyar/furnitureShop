@@ -84,6 +84,26 @@
 		margin: 0 3px;
 		padding: 5px 0;
 		position: relative;
+
+		@media (any-hover: hover) {
+			&:hover {
+				.menu__sub-list {
+					opacity: 1;
+					transform: translate(0, 0);
+					visibility: visible;
+					pointer-events: auto;
+				}
+
+				.menu__arrow {
+					transform: rotate(180deg);
+				}
+
+				.menu__arrow,
+				.menu__link {
+					color: $orangeColor;
+				}
+			}
+		}
 	}
 
 	//.menu__link
@@ -98,7 +118,8 @@
 	&__arrow {
 		margin-left: 5px;
 		font-size: 8px;
-		transition: all 0.3s linear;
+		transition: all 0.3s ease 0s;
+
 	}
 
 	// .menu__sub-list
@@ -110,10 +131,15 @@
 		padding: 15px;
 
 		@media (min-width: 767.98px) {
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s ease 0s;
+			transform: translate(0, 10px);
 			min-width: 200px;
 			position: absolute;
 			left: 0;
 			top: 100%;
+			pointer-events: none;
 		}
 	}
 
@@ -121,6 +147,7 @@
 
 	&__sub-link {
 		color: white;
+		font-weight: 500;
 
 		&:not(:last-child) {
 			margin-bottom: 5px;

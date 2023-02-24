@@ -195,6 +195,21 @@ body {
   padding: 5px 0;
   position: relative;
 }
+@media (any-hover: hover) {
+  .menu__item:hover .menu__sub-list {
+    opacity: 1;
+    transform: translate(0, 0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .menu__item:hover .menu__arrow {
+    transform: rotate(180deg);
+  }
+  .menu__item:hover .menu__arrow,
+  .menu__item:hover .menu__link {
+    color: #E89F71;
+  }
+}
 .menu__link {
   font-weight: 500;
   transition: color 0.3s linear;
@@ -202,7 +217,7 @@ body {
 .menu__arrow {
   margin-left: 5px;
   font-size: 8px;
-  transition: all 0.3s linear;
+  transition: all 0.3s ease 0s;
 }
 .menu__sub-list {
   position: relative;
@@ -212,14 +227,20 @@ body {
 }
 @media (min-width: 767.98px) {
   .menu__sub-list {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease 0s;
+    transform: translate(0, 10px);
     min-width: 200px;
     position: absolute;
     left: 0;
     top: 100%;
+    pointer-events: none;
   }
 }
 .menu__sub-link {
   color: white;
+  font-weight: 500;
 }
 .menu__sub-link:not(:last-child) {
   margin-bottom: 5px;
