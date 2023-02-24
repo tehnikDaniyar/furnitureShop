@@ -1,0 +1,187 @@
+.header {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+
+	// .header__wrapper
+
+	&__wrapper {
+		position: fixed;
+		width: 100%;
+		left: 0;
+		top: 0;
+		z-index: 50;
+	}
+
+	// .header__container
+
+	&__container {}
+
+	// .header__body
+
+	&__body {
+		display: flex;
+		align-items: center;
+		min-height: 125px;
+		padding: 5px 0;
+	}
+
+	// .header__main
+
+	&__main {
+		display: flex;
+		flex: 0 0 calc(494/1240) * 100%;
+		align-items: center;
+	}
+
+	// .header_logo
+
+	&_logo {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: calc(29 / 24) * 100%;
+		color: #000000;
+	}
+
+	// .header__menu
+
+	&__menu {}
+
+	// .header__search
+
+	&__search {}
+
+	// .header__actions
+
+	&__actions {}
+}
+
+.menu {
+	flex: 0 1 420px;
+
+
+	// .menu__body
+
+	&__body {}
+
+	// .menu__list
+
+	&__list {
+		@media (min-width: 767.98px) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+		}
+	}
+
+	// .menu__item
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0 3px;
+		padding: 5px 0;
+		position: relative;
+	}
+
+	//.menu__link
+
+	&__link {
+		font-weight: 500;
+		transition: color 0.3s linear; //ease 0s;
+	}
+
+	// .menu__arrow
+
+	&__arrow {
+		margin-left: 5px;
+		font-size: 8px;
+		transition: all 0.3s linear;
+	}
+
+	// .menu__sub-list
+
+	&__sub-list {
+		position: relative;
+		flex: 1 1 100%;
+		background-color: $orangeColor;
+		padding: 15px;
+
+		@media (min-width: 767.98px) {
+			min-width: 200px;
+			position: absolute;
+			left: 0;
+			top: 100%;
+		}
+	}
+
+	// .menu__sub-link
+
+	&__sub-link {
+		color: white;
+
+		&:not(:last-child) {
+			margin-bottom: 5px;
+		}
+	}
+
+	// .menu__sub-item
+
+	&__sub-item {}
+}
+
+.search-form {
+
+	// .search-form__icon
+
+	&__icon {}
+
+	// .search-form__item
+
+	&__item {}
+
+	// .search-form__btn
+
+	&__btn {}
+
+	// .search-form__input
+
+	&__input {}
+}
+
+.actions-header {
+
+	// .actions-header__item
+
+	&__item {
+
+		// .actions-header__item_favorites
+
+		&_favorites {}
+
+		// .actions-header__item_user
+
+		&_user {}
+	}
+}
+
+.cart-header {
+
+	// .cart-header__icon
+
+	&__icon {}
+
+	// .cart-header__body
+
+	&__body {}
+
+	// .cart-header__list
+
+	&__list {}
+}
+
+.cart-list {}
+
+.icon-menu {}

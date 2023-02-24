@@ -12,7 +12,7 @@ export const html = () => {
 			})
 		))
 		.pipe(fileinclude())
-		.pipe(app.plugins.replace(/\/base-setting-for-Gulp\/src\/img/gi, 'img'))
+		.pipe(app.plugins.replace(/\/src\/img/gi, './img'))
 		.pipe(
 			app.plugins.if(
 				app.isBuild,
