@@ -29,3 +29,11 @@ button {
 	border: none;
 	cursor: pointer;
 }
+
+input {
+	border: none;
+
+	&:focus {
+		outline: none;
+	}
+}

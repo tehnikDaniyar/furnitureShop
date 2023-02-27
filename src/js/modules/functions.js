@@ -18,6 +18,13 @@ export function isWebp() {
 	});
 }
 
+export function removeClasses(collection, className) {
+	for (let elem of collection) {
+		elem.classList.remove(className);
+	}
+};
+
+
 
 
 
