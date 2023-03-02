@@ -345,20 +345,11 @@
 	// .search-form__input
 
 	&__input {
-		font-family: gilroy;
-		padding: 10px;
-		font-size: 14px;
-		line-height: 150%;
-		font-weight: 400;
+
 
 		flex: 0 1 80%;
 
-		&:placeholder-shown {
-			font-family: inherit;
-			font-size: inherit;
-			line-height: inherit;
-			font-weight: inherit;
-		}
+
 	}
 }
 

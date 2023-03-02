@@ -166,6 +166,27 @@ main {
   top: 0;
 }
 
+input {
+  font-family: gilroy;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 400;
+}
+input:placeholder-shown {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+._title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 82.7586206897%;
+  color: #000000;
+}
+
 .header {
   position: absolute;
   width: 100%;
@@ -415,18 +436,7 @@ main {
   font-size: 16px;
 }
 .search-form__input {
-  font-family: gilroy;
-  padding: 10px;
-  font-size: 14px;
-  line-height: 150%;
-  font-weight: 400;
   flex: 0 1 80%;
-}
-.search-form__input:placeholder-shown {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  font-weight: inherit;
 }
 
 .actions-header {
