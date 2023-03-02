@@ -1,4 +1,6 @@
 .footer {
+	color: #616161;
+
 
 	// .footer__container
 
@@ -6,11 +8,23 @@
 
 	// .footer__body
 
-	&__body {}
+	&__body {
+		border-top: 1px solid #D8D8D8;
+		display: grid;
+		grid-template-columns: 250px 1fr 290px;
+		padding-top: clamp(1.875rem, 1.223rem + 3.26vw, 3.75rem);
+		padding-bottom: clamp(1.875rem, 1.223rem + 3.26vw, 3.75rem);
+		column-gap: clamp(0rem, -1.739rem + 8.7vw, 5rem);
+	}
 
 	// .footer__main
 
-	&__main {}
+	&__main {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: clamp(0.313rem, 0.073rem + 1.2vw, 1rem)
+	}
 
 	// .footer__logo
 
@@ -35,10 +49,17 @@
 
 
 .contacts-footer {
-
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: clamp(0.313rem, 0.073rem + 1.2vw, 1rem);
 	// .contacts-footer__item
 
-	&__item {}
+	&__item {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+	}
 }
 
 .menu-footer {

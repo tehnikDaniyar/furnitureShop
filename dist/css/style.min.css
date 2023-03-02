@@ -126,9 +126,6 @@ button {
 input {
   border: none;
 }
-input:focus {
-  outline: none;
-}
 
 html,
 body {
@@ -142,6 +139,7 @@ body {
   background-color: #F9F1E7;
   display: flex;
   flex-direction: column;
+  font-weight: 400;
 }
 
 main {
@@ -182,9 +180,19 @@ input:placeholder-shown {
 
 ._title {
   font-weight: 700;
-  font-size: 24px;
-  line-height: 82.7586206897%;
+  font-size: clamp(1.25rem, 1.163rem + 0.43vw, 1.5rem);
+  line-height: 120.8333333333%;
   color: #000000;
+}
+
+a {
+  transition: color 0.3s ease 0s;
+}
+a:focus {
+  outline: none;
+}
+a:hover {
+  color: #E89F71;
 }
 
 .header {
@@ -507,4 +515,33 @@ input:placeholder-shown {
     height: 3px;
     background-color: #000000;
   }
+}
+
+.footer {
+  color: #616161;
+}
+.footer__body {
+  border-top: 1px solid #D8D8D8;
+  display: grid;
+  grid-template-columns: 250px 1fr 290px;
+  padding-top: clamp(1.875rem, 1.223rem + 3.26vw, 3.75rem);
+  padding-bottom: clamp(1.875rem, 1.223rem + 3.26vw, 3.75rem);
+  column-gap: clamp(0rem, -1.739rem + 8.7vw, 5rem);
+}
+.footer__main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(0.313rem, 0.073rem + 1.2vw, 1rem);
+}
+.contacts-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(0.313rem, 0.073rem + 1.2vw, 1rem);
+}
+.contacts-footer__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
