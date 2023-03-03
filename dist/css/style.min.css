@@ -121,10 +121,14 @@ button {
   background-color: #fff;
   border: none;
   cursor: pointer;
+  background-color: inherit;
 }
 
 input {
   border: none;
+}
+input:focus {
+  outline: none;
 }
 
 html,
@@ -187,9 +191,6 @@ input:placeholder-shown {
 
 a {
   transition: color 0.3s ease 0s;
-}
-a:focus {
-  outline: none;
 }
 a:hover {
   color: #E89F71;
@@ -544,4 +545,59 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+}
+
+@media (min-width: 767.98px) {
+  .menu-footer {
+    display: flex;
+  }
+}
+@media (min-width: 767.98px) {
+  .menu-footer__column {
+    flex: 1 1 33.33333%;
+  }
+}
+.menu-footer__title {
+  cursor: default;
+  margin-bottom: clamp(0rem, -0.348rem + 1.74vw, 1rem);
+}
+.menu-footer__list li:not(:last-child) {
+  margin-bottom: clamp(0rem, -0.348rem + 1.74vw, 1rem);
+}
+.menu-footer__link {
+  font-weight: 500;
+}
+
+.subscribe__title {
+  cursor: default;
+  margin-bottom: clamp(0rem, -0.348rem + 1.74vw, 1rem);
+}
+.subscribe__form {
+  display: flex;
+  position: relative;
+  gap: 4px;
+}
+.subscribe__input {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #828282;
+  width: 100%;
+  background-color: #F4F5F7;
+}
+.subscribe__button {
+  flex: 0 0 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: white;
+  background-color: #E89F71;
+  transition: background-color 0.3s ease 0s;
+}
+.subscribe__button:hover {
+  background-color: #f08746;
 }

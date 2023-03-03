@@ -28,9 +28,13 @@ button {
 	background-color: #fff;
 	border: none;
 	cursor: pointer;
+	background-color: inherit;
 }
 
 input {
 	border: none;
 
+	&:focus {
+		outline: none;
+	}
 }
