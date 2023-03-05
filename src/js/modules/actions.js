@@ -24,10 +24,17 @@ export const actions = () => {
 				};
 
 			if (targetElement.closest('.icon-menu')) {
-				console.log('burger');
 				document.querySelector('.menu__body').classList.toggle('_active');
+				document.querySelector('.icon-menu').classList.toggle('_active');
 			}
 
+			if (targetElement.closest('.menu-footer__arrow')) {
+				targetElement.classList.toggle('open');
+				let parent = targetElement.parentElement;
+				let menu = parent.querySelector('.menu-footer__list');
+				menu.classList.toggle('open');
+				// targetElement.parentElement.querySelector('.menu-footer__list').toggle('open');
+			}
 		};
 	};
 };

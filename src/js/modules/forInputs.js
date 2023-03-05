@@ -7,21 +7,27 @@ export const forInputs = () => {
 			this.placeholder = '';
 		});
 
-		input.addEventListener('blur', function () {
-			console.log('blur');
+		input.addEventListener('blur', function getBlur() {
 			this.placeholder = valuePlaceholder;
-			if (this.hasAttribute('data-error')) {
-				console.log('data-error');
-				// if (!/[\w\d]+@[a-z].[a-z]/gi.test(this.value)) {
-				// 	console.log('error');
-				// 	this.parentElement.innerHTML += "<div class=\"subscribe__error\">error</div>";
-				// } else {
-				// 	console.log('ok');
-				// 	this.parentElement.removeChild(this.parentElement.querySelector(".subscribe__error"))
-				// }
-			}
 		})
 
+		if (input.hasAttribute('data-error')) {
+			let parent = input.parentElement;
+			let divError = document.createElement('div');
+			divError.textContent = 'error';
+			divError.classList.add('subscribe__error');
 
+			parent.addEventListener('submit', () => {
+				if (!parent.querySelector('.subscribe__error')) {
+					if (!/[\w\d]+@[a-z].[a-z]/gi.test(input.value)) {
+						parent.appendChild(divError);
+					};
+				} else {
+					if (/[\w\d]+@[a-z].[a-z]/gi.test(input.value)) {
+						parent.removeChild(parent.querySelector(".subscribe__error"));
+					};
+				}
+			})
+		}
 	}
 }
