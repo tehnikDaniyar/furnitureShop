@@ -3,23 +3,23 @@ export const forInputs = () => {
 	for (let input of inputs) {
 		const valuePlaceholder = input.placeholder;
 
-		input.addEventListener('focus', () => {
-			input.placeholder = '';
+		input.addEventListener('focus', function () {
+			this.placeholder = '';
 		});
 
-		input.addEventListener('blur', () => {
+		input.addEventListener('blur', function () {
 			console.log('blur');
-			input.placeholder = valuePlaceholder;
-			// if (input.hasAttribute('data-error')) {
-			// 	console.log('data-error');
-			// 	if (!/[\w\d]+@[a-z].[a-z]/gi.test(input.value)) {
-			// 		console.log('error');
-			// 		input.parentElement.innerHTML += "<div class=\"subscribe__error\">error</div>";
-			// 	} else {
-			// 		console.log('ok');
-			// 		input.parentElement.removeChild(input.parentElement.querySelector(".subscribe__error"))
-			// 	}
-			// }
+			this.placeholder = valuePlaceholder;
+			if (this.hasAttribute('data-error')) {
+				console.log('data-error');
+				// if (!/[\w\d]+@[a-z].[a-z]/gi.test(this.value)) {
+				// 	console.log('error');
+				// 	this.parentElement.innerHTML += "<div class=\"subscribe__error\">error</div>";
+				// } else {
+				// 	console.log('ok');
+				// 	this.parentElement.removeChild(this.parentElement.querySelector(".subscribe__error"))
+				// }
+			}
 		})
 
 
