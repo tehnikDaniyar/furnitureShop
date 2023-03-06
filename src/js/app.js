@@ -7,3 +7,6 @@ forInputs();
 
 import { actions } from "./modules/actions.js";
 actions();
+
+import { mainSlider } from "./modules/mainSlider.js";
+mainSlider();
