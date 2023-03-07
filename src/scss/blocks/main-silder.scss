@@ -6,37 +6,118 @@
 }
 
 .main-slider {
-
+	background-color: #FCF8F3;
 	// .main-slider__container
 
-	&__container {}
+	&__container {
+		position: relative;
+
+		@media (min-width:992.98px) {
+			&::before {
+				content: "";
+				position: absolute;
+				background-color: #F9F1E7;
+				width: 100vw;
+				top: 0;
+				right: 376px;
+				height: 100%;
+			}
+		}
+	}
 
 	// .main-slider__body
 
-	&__body {}
+	&__body {
+		padding: 140px 0 0 0;
+		position: relative;
+		z-index: 2;
+
+		@media (max-width:992.98px) {
+			padding: 80px 0 0 0;
+		}
+
+		@media (max-width:767.98px) {
+			padding: 50px 0 0 0;
+		}
+
+		@media (min-width:992.98px) {
+			display: flex;
+		}
+	}
 
 	// .main-slider__content
 
-	&__content {}
+	&__content {
+		flex: 0 0 calc(494 / 1240) * 100%;
+	}
 
 	// .main-slider__slider
 
-	&__slider {}
+	&__slider {
+		flex: 1 1 auto;
+		min-width: 0;
+	}
 }
 
 .content-main {
+	position: relative;
+	z-index: 5;
+	background: rgba(255, 255, 255, 0.72);
+	padding: 15px;
+
+	@media (min-width: 992.98px) {
+		padding: clamp(0.063rem, -1.22rem + 6.41vw, 3.75rem);
+		background: rgba(255, 255, 255, 0.9);
+
+		@supports((-webkit-drop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+			background: rgba(255, 255, 255, 0.72);
+			backdrop-filter: blur(31px);
+		}
+	}
+
 
 	// .content-main__title
 
-	&__title {}
+	&__title {
+		font-weight: 700;
+		font-size: clamp(1.5rem, 0.804rem + 3.48vw, 3.5rem);
+		line-height: 120%;
+
+		&:not(:last-child) {
+			margin-bottom: calc(16px/56px) * 1em;
+		}
+	}
 
 	// .content-main__text
 
-	&__text {}
+	&__text {
+		font-size: clamp(1rem, 0.913rem + 0.43vw, 1.25rem);
+		font-weight: 500;
+		line-height: 150%;
+		color: $darkGrayColor;
+
+		&:not(:last-child) {
+			margin-bottom: calc(48px/20px) * 1em;
+		}
+
+	}
 
 	// .content-main__button
 
-	&__button {}
+	&__button {
+		min-height: clamp(2.813rem, 2.095rem + 3.59vw, 4.875rem);
+		font-weight: 600;
+		font-size: clamp(1rem, 0.913rem + 0.43vw, 1.25rem);
+		background-color: $orangeColor;
+		color: #fff;
+		width: 100%;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #b47b58;
+			}
+		}
+	}
 }
 
 .slider-main {
