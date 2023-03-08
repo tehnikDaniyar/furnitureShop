@@ -73,9 +73,12 @@ a {
 
 	&:hover {
 		color: $orangeColor;
-
 	}
 }
+
+//===========for sliders =====================
+
+//======controls========
 
 .btn {
 	display: inline-flex;
@@ -83,10 +86,106 @@ a {
 	align-items: center;
 	padding: 0 15px;
 	min-height: 48px;
-	transition: all 0.3s ease 0s;
 	text-align: center;
 }
 
-.slider-arrows {}
+.slider-arrows {
+	display: grid;
+	grid-template-columns: repeat(2, 48px);
+	column-gap: 8px;
 
-.slider-arrow {}
+}
+
+.slider-arrow {
+	height: 48px;
+	border-radius: 50%;
+	background-color: rgb(232, 159, 113, 0.3);
+	color: $orangeColor;
+	cursor: pointer;
+	font-size: 12px;
+	transition: all 0.3s ease 0s;
+
+
+	&_prev {
+		transform: rotate(90deg);
+
+		&::before {
+			// display: none;
+		}
+	}
+
+	&_next {
+		transform: rotate(-90deg);
+
+		&::before {}
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: rgb(232, 159, 113, 1);
+			color: white;
+		}
+	}
+
+	&_white {
+		background-color: #fff;
+		box-shadow: 0px 4px 14px 1px rgba(0, 0, 0, 0.16);
+	}
+
+}
+
+
+//=====pagination=======
+.swiper-pagination-bullets {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+.swiper-pagination-bullet {
+	cursor: pointer;
+	flex: 0 0 27px;
+	height: 27px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 2px 0;
+	position: relative;
+
+	&:not(:last-child) {
+		margin-right: 12px;
+	}
+
+	&::after {
+		content: "";
+		height: 11px;
+		width: 11px;
+		background-color: $grayColor;
+		border-radius: 50%;
+		transition: background-color 0.3s ease 0s;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 27px;
+		height: 27px;
+		border-radius: 50%;
+		left: 0;
+		top: 0;
+		border: 1px solid $orangeColor;
+		transition: scale 0.3s ease 0s;
+		transform: scale(0);
+	}
+}
+
+
+.swiper-pagination-bullet-active {
+	&::after {
+		background-color: $orangeColor;
+	}
+
+	&::before {
+		transform: scale(1);
+	}
+}

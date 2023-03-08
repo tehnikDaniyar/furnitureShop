@@ -56,6 +56,11 @@
 	&__slider {
 		flex: 1 1 auto;
 		min-width: 0;
+
+		@media (min-width: 992.98px) {
+			padding: 0 0 0 32px;
+		}
+
 	}
 }
 
@@ -112,6 +117,7 @@
 		color: #fff;
 		width: 100%;
 
+
 		@media (any-hover: hover) {
 			&:hover {
 				background-color: #b47b58;
@@ -121,14 +127,23 @@
 }
 
 .slider-main {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 
 	// .slider-main__controls
 
 	&__controls {}
 
-	// .slider-main__body
+	// .slider-main__body (swiper)
 
-	&__body {}
+	&__body {
+		overflow: visible;
+
+		@media (min-width:992.98px) {
+			width: clamp(18.125rem, 4.125rem + 70vw, 58.375rem);
+		}
+	}
 
 	// .slider-main__wrapper
 
@@ -140,26 +155,80 @@
 
 	// .slider-main__image
 
-	&__image {}
+	&__image {
+		padding: 0 0 50% 0;
+	}
 
 	// .slider-main__content
 
-	&__content {}
+	&__content {
+		min-width: 295px;
+		max-height: 300px;
+		overflow: auto;
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		padding: clamp(0.938rem, 0.742rem + 0.98vw, 1.5rem);
+
+		@media (min-width: 767.98px) {
+			position: absolute;
+			min-width: 350px;
+			right: clamp(0rem, -0.87rem + 4.35vw, 2.5rem);
+			bottom: clamp(0rem, -0.87rem + 4.35vw, 2.5rem);
+		}
+
+		@supports((-webkit-drop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+			background: rgba(255, 255, 255, 0.72);
+			backdrop-filter: blur(31px);
+		}
+	}
 
 	// .slider-main__title
 
-	&__title {}
+	&__title {
+		font-size: clamp(1.375rem, 1.245rem + 0.65vw, 1.75rem);
+		font-weight: 600;
+		line-height: 120%;
+
+		&:not(:last-child) {
+			margin-bottom: 4px;
+		}
+	}
 
 	// .slider-main__text
 
-	&__text {}
+	&__text {
+		line-height: 150%;
+		color: $darkGrayColor;
+
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+	}
 
 	// .slider-main__price
 
-	&__price {}
+	&__price {
+		display: flex;
+		align-items: center;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		line-height: 150%;
+		font-weight: 600;
+		font-size: clamp(1rem, 0.913rem + 0.43vw, 1.25rem);
+
+		&::before {
+			margin: 0 0 0 10px;
+			font-size: 12px;
+		}
+	}
 }
 
 .controls-slider-main {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 0 20px 0;
 
 	// .controls-slider-main__dotts
 

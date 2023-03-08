@@ -1,4 +1,4 @@
-import Swiper from "swiper"
+// import Swiper from "swiper/bundle"
 export const mainSlider = () => {
 	const swiper = new Swiper('.slider-main__body', {
 		// Optional parameters
@@ -19,13 +19,13 @@ export const mainSlider = () => {
 
 		// Navigation arrows
 		navigation: {
-			nextEl: '.slider-main .slider-arrow_next',
-			prevEl: '.slider-main .slider-arrow_prev',
+			nextEl: '.slider-arrow_next',
+			prevEl: '.slider-arrow_prev',
 		},
 
 		// And if we need scrollbar
-		scrollbar: {
-			el: '.swiper-scrollbar',
-		},
+		// scrollbar: {
+		// 	el: '.swiper-scrollbar',
+		// },
 	});
 }
