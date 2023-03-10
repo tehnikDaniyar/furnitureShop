@@ -13,14 +13,19 @@ actions();
 
 const swiper = new Swiper('.slider-main__body', {
 	// Optional parameters
-	observer: true, //auto update slider
-	observeParents: true,
-	loop: true,
+	// observer: true, //auto update slider
+	// observeParents: true,
+	// loop: true,
+	// loopAdditionalSlides: 5,
 	slidesPerView: 1,
 	spaceBetween: 32,
-	watchOverflow: true,
+	// watchOverflow: true,
 	speed: 800,
-	parallax: true,
+	// parallax: true,
+	// loopedSlides: 5,
+	// loopPreventsSliding: true,
+
+
 
 	// If we need pagination
 	pagination: {
