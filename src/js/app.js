@@ -20,8 +20,8 @@ const swiper = new Swiper('.slider-main__body', {
 	slidesPerView: 1,
 	spaceBetween: 32,
 	// watchOverflow: true,
-	speed: 800,
-	// parallax: true,
+	speed: 1200,
+	parallax: true,
 	// loopedSlides: 5,
 	// loopPreventsSliding: true,
 
@@ -35,8 +35,8 @@ const swiper = new Swiper('.slider-main__body', {
 
 	// Navigation arrows
 	navigation: {
-		nextEl: '.slider-arrow_next',
-		prevEl: '.slider-arrow_prev',
+		nextEl: '.slider-main .slider-arrow_next',
+		prevEl: '.slider-main .slider-arrow_prev',
 	},
 
 	// And if we need scrollbar

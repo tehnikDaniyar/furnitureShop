@@ -28,16 +28,18 @@
 	// .main-slider__body
 
 	&__body {
-		padding: 140px 0 0 0;
+		padding-top: 140px;
 		position: relative;
 		z-index: 2;
 
 		@media (max-width:992.98px) {
-			padding: 80px 0 0 0;
+			padding-top: 80px;
+			position: relative;
+			padding-bottom: clamp(2.813rem, 2.095rem + 3.59vw, 4.875rem);
 		}
 
 		@media (max-width:767.98px) {
-			padding: 50px 0 0 0;
+			padding-top: 50px;
 		}
 
 		@media (min-width:992.98px) {
@@ -51,13 +53,17 @@
 		flex: 0 0 calc(494 / 1240) * 100%;
 		margin-bottom: clamp(0.938rem, -0.476rem + 7.07vw, 5rem);
 		align-self: flex-start;
+
+		@media (max-width:992.98px) {
+			// margin-bottom: 0;
+			margin: 0 -15px 20px;
+		}
 	}
 
 	// .main-slider__slider
 
 	&__slider {
 		flex: 1 1 auto;
-		min-width: 0;
 		align-self: flex-end;
 
 		@media (min-width: 992.98px) {
@@ -68,12 +74,12 @@
 }
 
 .content-main {
-	position: relative;
-	z-index: 5;
 	background: rgba(255, 255, 255, 0.72);
 	padding: 15px;
 
 	@media (min-width: 992.98px) {
+		position: relative;
+		z-index: 5;
 		padding: clamp(0.063rem, -1.22rem + 6.41vw, 3.75rem);
 		background: rgba(255, 255, 255, 0.9);
 
@@ -126,6 +132,13 @@
 				background-color: #b47b58;
 			}
 		}
+
+		@media (max-width:992.98px) {
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+		}
 	}
 }
 
@@ -133,22 +146,41 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
+	min-width: 0;
+
+	@media (max-width:992.98px) {
+		// display: block;
+		align-self: stretch;
+		flex-direction: column-reverse;
+	}
+
+	@media (max-width:992.98px) {
+		margin: 0 -15px;
+	}
+
+
 
 	// .slider-main__controls
 
 	&__controls {
 		align-self: stretch;
+
+		@media (max-width:992.98px) {
+			padding: 15px;
+		}
 	}
 
 	// .slider-main__body (swiper)
 
 	&__body {
 		overflow: hidden;
+		width: 100%;
 		// display: none;
 
 		@media (min-width:992.98px) {
 			width: clamp(18.125rem, 4.125rem + 70vw, 58.375rem);
 		}
+
 	}
 
 	// .slider-main__wrapper
@@ -173,12 +205,12 @@
 		min-width: 295px;
 		max-height: 300px;
 		overflow: auto;
-		position: absolute;
 		display: flex;
 		flex-direction: column;
 		padding: clamp(0.938rem, 0.742rem + 0.98vw, 1.5rem);
+		z-index: 5;
 
-		@media (min-width: 767.98px) {
+		@media (min-width: 992.98px) {
 			position: absolute;
 			min-width: 350px;
 			right: clamp(0rem, -0.87rem + 4.35vw, 2.5rem);
@@ -242,11 +274,19 @@
 
 	&__dotts {
 		flex: 1 1 auto;
+
+		@media (max-width:992.98px) {
+			justify-content: center;
+		}
 	}
 
 	// .controls-slider-main__arrows
 
-	&__arrows {}
+	&__arrows {
+		@media (max-width:992.98px) {
+			display: none;
+		}
+	}
 }
 
 
