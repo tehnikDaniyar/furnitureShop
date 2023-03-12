@@ -37,6 +37,7 @@ export const actions = () => {
 			}
 		};
 
+		//==========for header observer=============
 		let header = document.querySelector('.header');
 
 		function callback(entries, observer) {
