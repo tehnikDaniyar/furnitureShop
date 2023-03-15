@@ -44,3 +44,6 @@ const swiper = new Swiper('.slider-main__body', {
 	// 	el: '.swiper-scrollbar',
 	// },
 });
+
+
+
