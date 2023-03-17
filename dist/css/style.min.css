@@ -1080,18 +1080,32 @@ a:hover {
   gap: 32px;
   grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
 }
+.products__footer {
+  padding-top: 32px;
+  text-align: center;
+}
+.products__more {
+  border: 1px solid #E89F71;
+  min-width: 245px;
+}
+
 .item-products {
   background-color: #F4F5F7;
   display: flex;
   flex-direction: column;
   position: relative;
 }
+.item-products:hover .item-products__actions {
+  opacity: 1;
+  visibility: visible;
+}
 .item-products__labels {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 8.42%;
-  right: 8.42%;
+  top: 8.5%;
+  right: 8.5%;
+  z-index: 5;
 }
 .item-products__label {
   flex: 0 0 48px;
@@ -1150,6 +1164,7 @@ a:hover {
   color: #B0B0B0;
   font-weight: 400;
   margin-left: 16px;
+  text-decoration-line: line-through;
 }
 @media (any-hover: none) {
   .item-products__actions {
@@ -1158,6 +1173,9 @@ a:hover {
 }
 @media (any-hover: hover) {
   .item-products__actions {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease 0s;
     position: absolute;
     left: 0;
     top: 0;
