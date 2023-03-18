@@ -13,6 +13,7 @@ export const path = {
 		js: `${buildFolder}/js/`,
 		image: `${buildFolder}/img/`,
 		fonts: `${buildFolder}/fonts/`,
+		json: `${buildFolder}/json/`
 	},
 	src: {
 		files: `${srcFolder}/files/**/*.*`,
@@ -22,6 +23,7 @@ export const path = {
 		images: `${srcFolder}/img/**/*.{jpg, jpeg, png, gif, webp}`,
 		svg: `${srcFolder}/img/**/*.svg`,
 		svgicons: `${srcFolder}/svgicons/*.svg`,
+		json: `${srcFolder}/json/*.json`
 	},
 	whatch: {
 		files: `${srcFolder}/files/**/*.*`,
@@ -29,6 +31,7 @@ export const path = {
 		scss: `${srcFolder}/scss/**/*.scss`,
 		js: `${srcFolder}/js/**/*.js`,
 		images: `${srcFolder}/img/**/*.{jpg, jpeg, png, gif, webp, svg}`,
+		json: `${srcFolder}/json/*.json`
 	},
 	clean: {
 		files: `${buildFolder}`,

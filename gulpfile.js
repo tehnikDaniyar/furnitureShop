@@ -21,6 +21,7 @@ import { images } from './gulp/tasks/images.js';
 import { otfToTtf, ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
 import { svgSprive } from './gulp/tasks/svgSprive.js';
 import { zip } from './gulp/tasks/zip.js';
+import { json } from './gulp/tasks/json.js';
 
 
 //=====watcher==============
@@ -30,12 +31,13 @@ const watcher = () => {
 	gulp.watch(path.whatch.scss, scss);
 	gulp.watch(path.whatch.js, js);
 	gulp.watch(path.whatch.images, images);
+	gulp.watch(path.whatch.json, json);
 };
 
 
 //=====scripts==============
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
-const mainScript = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
+const mainScript = gulp.series(fonts, gulp.parallel(copy, json, html, scss, js, images));
 const dev = gulp.series(reset, mainScript, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainScript);
 const deployZIP = gulp.series(reset, mainScript, zip);
