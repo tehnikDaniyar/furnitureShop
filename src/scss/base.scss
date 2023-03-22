@@ -20,8 +20,8 @@ body {
 	color: $mainColor;
 	font-family: gilroy;
 	font-size: 16px;
-	display: flex;
-	flex-direction: column;
+	// display: flex;
+	// flex-direction: column;
 	font-weight: 400;
 	// overflow: hidden;
 }
@@ -68,7 +68,7 @@ input {
 
 ._title-footer {
 	font-weight: 700;
-	font-size: clamp(1.25rem, 1.163rem + 0.43vw, 1.5rem);
+	font-size: clamp(1.125rem, 1.038rem + 0.43vw, 1.375rem);
 	line-height: calc(29 / 24) * 100%;
 	color: #000000;
 }

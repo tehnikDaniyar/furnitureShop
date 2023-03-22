@@ -75,6 +75,14 @@ export const actions = () => {
 					}
 				};
 
+				function getOldPrice(product) {
+					if (product.priceOld) {
+						return `<div class="item-products__price item-products_old">Rp ${product.priceOld}</div>`
+					} else {
+						return "";
+					}
+				}
+
 				products.forEach(product => {
 					let template = `			<article class="products__item item-products" data-pid="${product.id}">
 					<div class="item-products__labels">
@@ -89,7 +97,8 @@ export const actions = () => {
 							<div class="item-products__text">Minimalist fan</div>
 						</div>
 						<div class="item-products__prices">
-							<div class="item-products__price">Rp 500.000</div>
+							<div class="item-products__price">Rp ${product.price}</div>
+							${getOldPrice(product)}
 						</div>
 						<div class="item-products__actions actions-product">
 							<div class="actions-product__body">
@@ -99,9 +108,58 @@ export const actions = () => {
 							</div>
 						</div>
 					</div>
-				</article > `;
+				</article >`;
 					parent.innerHTML += template;
 				})
+			}
+
+			if (targetElement.classList.contains("actions-product__button")) {
+				e.preventDefault();
+				const productId = targetElement.closest('.products__item').dataset.pid;
+				addToCart(targetElement, productId);
+			}
+
+			function addToCart(targetElement, productId) {
+				if (!targetElement.classList.contains('_hold')) {
+					targetElement.classList.add('_hold');
+					targetElement.classList.add('_fly');
+
+					const cart = document.querySelector('.cart-header__icon');
+					const product = document.querySelector(`[data-pid="${productId}"]`);
+					const productImage = product.querySelector('.item-products__image');
+
+					const productImageFly = productImage.cloneNode(true);
+					const productImageFlyWidth = productImage.offsetWidth;
+					const productImageFlyHeight = productImage.offsetHeight;
+					const productImageFlyTop = productImage.getBoundingClientRect().top;
+					const productImageFlyLeft = productImage.getBoundingClientRect().left;
+					console.log(productImageFlyWidth, productImageFlyHeight, productImageFlyTop, productImageFlyLeft);
+
+					productImageFly.setAttribute('class', '_flyimage _ibg');
+					productImageFly.style.cssText =
+						`
+					border-radius: 0;
+					left: ${productImageFlyLeft}px;
+					top: ${productImageFlyTop}px;
+					width: ${productImageFlyWidth}px;
+					height: ${productImageFlyHeight}px;
+					`;
+
+					document.body.append(productImageFly);
+
+					const cartLeft = cart.getBoundingClientRect().left;
+					const cartTop = cart.getBoundingClientRect().top;
+
+					productImageFly.style.cssText =
+						`
+					border-radius: 100%;
+					left: ${cartLeft}px;
+					top: ${cartTop}px;
+					width: 0px;
+					height: 0px;
+				`;
+
+				}
 			}
 		};
 
