@@ -127,6 +127,7 @@ export const actions = () => {
 					const cart = document.querySelector('.cart-header__icon');
 					const product = document.querySelector(`[data-pid="${productId}"]`);
 					const productImage = product.querySelector('.item-products__image');
+					const productButton = product.querySelector('.actions-product__button');
 
 					const productImageFly = productImage.cloneNode(true);
 					const productImageFlyWidth = productImage.offsetWidth;
@@ -157,8 +158,53 @@ export const actions = () => {
 					top: ${cartTop}px;
 					width: 0px;
 					height: 0px;
+					opacity: 0;
 				`;
+					productImageFly.addEventListener('transitionend', function () {
+						if (productButton.classList.contains('_fly')) {
+							productImageFly.remove();
+							updateCart(productButton, productId);
+							productButton.classList.remove('_fly');
+						}
+					}
+					)
+				}
+			};
 
+			function updateCart(productButton, productid, productAdd = true) {
+				const cart = document.querySelector('.cart-header');
+				const cartIcon = document.querySelector('.cart-header__icon');
+				const cartQuantiti = cartIcon.querySelector('span');
+				const cartProduct = document.querySelector(`[data-cart-pid="${productid}"]`);
+				const cartList = document.querySelector('.cart-list');
+				console.log('updateCart');
+
+				//====add========
+				if (productAdd) {
+					if (cartQuantiti) {
+						cartQuantiti.innerHTML = ++cartQuantiti.innerHTML;
+					} else {
+						cartIcon.insertAdjacentHTML('beforeend', `<span>1</span>`);
+					};
+
+					if (!cartProduct) {
+						const product = document.querySelector(`[data-pid="${productid}"]`);
+						const cartProductImage = product.querySelector('.item-products__image');
+						const cartProductTitle = product.querySelector('.item-products__title');
+						const cartProductContent = `
+							<a href="#" class="cart-list__image _ibg>${cartProductImage}</a>
+							<div class="cart-list__body">
+								<a href="#" class="cart-list__title">${cartProductTitle.innerHTML}</a>
+								<div class="cart-list__quantiti">Quantiti:<span>1</span></div>
+								<a href="#" class="cart-list__delele">Delete</a>
+							</div>`;
+						cartList.insertAdjacentHTML('beforeend', `<li data-cart-pid="${productid}" class="cart-list__item">${cartProductContent}</li>`)
+					} else {
+						const cartProductQuantiti = cartProduct.querySelector('.cart-list__quantiti span');
+						cartProductQuantiti.innerHTML = ++cartProductQuantiti.innerHTML;
+					};
+
+					productButton.classList.remove('_hold')
 				}
 			}
 		};
