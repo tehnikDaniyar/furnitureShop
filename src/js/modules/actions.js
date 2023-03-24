@@ -189,20 +189,39 @@ export const actions = () => {
 
 					if (!cartProduct) {
 						const product = document.querySelector(`[data-pid="${productid}"]`);
-						const cartProductImage = product.querySelector('.item-products__image');
-						const cartProductTitle = product.querySelector('.item-products__title');
+						const cartProductImage = product.querySelector('.item-products__image').innerHTML;
+						const srcImage = product.querySelector('.item-products__image img').getAttribute("src");
+						const cartProductTitle = product.querySelector('.item-products__title').innerHTML;
 						const cartProductContent = `
-							<a href="#" class="cart-list__image _ibg>${cartProductImage}</a>
+							<div href="#" class="cart-list__image _ibg"><img src="${srcImage}" alt="img"></div>
 							<div class="cart-list__body">
-								<a href="#" class="cart-list__title">${cartProductTitle.innerHTML}</a>
+								<a href="#" class="cart-list__title">${cartProductTitle}</a>
 								<div class="cart-list__quantiti">Quantiti:<span>1</span></div>
 								<a href="#" class="cart-list__delele">Delete</a>
 							</div>`;
-						cartList.insertAdjacentHTML('beforeend', `<li data-cart-pid="${productid}" class="cart-list__item">${cartProductContent}</li>`)
+
+
+						cartList.insertAdjacentHTML('beforeend', `<li data-cart-pid="${productid}" class="cart-list__item">` + cartProductContent + "</li>");
+
+
+						const renderedImage = document.querySelector(".cart-list__image");
+						console.log(renderedImage);
+
+
+
+
+
+
+
+
+
+
+						// renderedImage.setAttribute("src", srcImage);
 					} else {
 						const cartProductQuantiti = cartProduct.querySelector('.cart-list__quantiti span');
 						cartProductQuantiti.innerHTML = ++cartProductQuantiti.innerHTML;
 					};
+
 
 					productButton.classList.remove('_hold')
 				}
