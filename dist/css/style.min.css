@@ -203,8 +203,10 @@ input:placeholder-shown {
 a {
   transition: color 0.3s ease 0s;
 }
-a:hover {
-  color: #E89F71;
+@media (any-hover: hover) {
+  a:hover {
+    color: #E89F71;
+  }
 }
 
 .btn {
@@ -638,6 +640,19 @@ a:hover {
   padding: 15px;
   width: 300px;
   z-index: 5;
+}
+@media (max-width: 992px) {
+  .cart-header__body {
+    top: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .cart-header__body {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+  }
 }
 .icon-menu {
   display: none;

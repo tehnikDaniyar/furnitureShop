@@ -46,8 +46,10 @@ export const actions = () => {
 					button.classList.add('_hold');
 					let file = "json/products.json";
 					let response = await fetch(file, { method: "GET" });
+					console.log(response);
 					if (response.ok) {
 						let result = await response.json();
+						console.log(result);
 						loadProducts(result, button);
 						button.classList.remove('_hold');
 						button.remove();
@@ -193,7 +195,7 @@ export const actions = () => {
 						const srcImage = product.querySelector('.item-products__image img').getAttribute("src");
 						const cartProductTitle = product.querySelector('.item-products__title').innerHTML;
 						const cartProductContent = `
-							<div href="#" class="cart-list__image _ibg"><img src="${srcImage}" alt="img"></div>
+							<a href="#" class="cart-list__image _ibg"><img src="${srcImage}" alt="img"></a>
 							<div class="cart-list__body">
 								<a href="#" class="cart-list__title">${cartProductTitle}</a>
 								<div class="cart-list__quantiti">Quantiti:<span>1</span></div>
@@ -206,17 +208,6 @@ export const actions = () => {
 
 						const renderedImage = document.querySelector(".cart-list__image");
 						console.log(renderedImage);
-
-
-
-
-
-
-
-
-
-
-						// renderedImage.setAttribute("src", srcImage);
 					} else {
 						const cartProductQuantiti = cartProduct.querySelector('.cart-list__quantiti span');
 						cartProductQuantiti.innerHTML = ++cartProductQuantiti.innerHTML;

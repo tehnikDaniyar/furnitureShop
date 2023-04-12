@@ -85,8 +85,10 @@ a {
 
 	transition: color 0.3s ease 0s;
 
-	&:hover {
-		color: $orangeColor;
+	@media (any-hover: hover) {
+		&:hover {
+			color: $orangeColor;
+		}
 	}
 }
 

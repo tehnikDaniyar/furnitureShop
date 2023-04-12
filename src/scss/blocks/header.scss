@@ -455,6 +455,17 @@
 		padding: 15px;
 		width: 300px;
 		z-index: 5;
+
+		@media (max-width:992px) {
+			top: 50px;
+		}
+
+		@media (max-width:767px) {
+			position: fixed;
+			top: 60px;
+			left: 0;
+			width: 100%;
+		}
 	}
 
 	// .cart-header__list
