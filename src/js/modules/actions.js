@@ -216,21 +216,40 @@ export const actions = () => {
 
 					productButton.classList.remove('_hold')
 				}
+			};
+
+			let body = document.querySelector(".cart-header__body");
+
+			if (targetElement.classList.contains("cart-header__icon") || targetElement.closest(".cart-header__icon")) {
+				body.querySelector(".cart-list__item") ? body.classList.toggle("_active") : null;
+			} else if (!targetElement.closest(".cart-header") && !targetElement.classList.contains("actions-product__button")) {
+				body.classList.remove("_active");
+			};
+
+			if (targetElement.classList.contains("cart-list__delele")) {
+				e.preventDefault();
+				console.log("click on delete button");
 			}
+
+
+
 		};
 
-		//==========for header observer=============
-		let header = document.querySelector('.header');
 
-		function callback(entries, observer) {
-			if (entries[0].isIntersecting) {
-				entries[0].target.classList.remove("_scroll");
-			} else {
-				entries[0].target.classList.add("_scroll");
-			}
-		}
 
-		const headerObserver = new IntersectionObserver(callback);
-		headerObserver.observe(header);
 	};
+
+	//==========for header observer=============
+	let header = document.querySelector('.header');
+
+	function callback(entries, observer) {
+		if (entries[0].isIntersecting) {
+			entries[0].target.classList.remove("_scroll");
+		} else {
+			entries[0].target.classList.add("_scroll");
+		}
+	}
+
+	const headerObserver = new IntersectionObserver(callback);
+	headerObserver.observe(header);
 };
