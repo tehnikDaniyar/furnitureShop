@@ -212,24 +212,35 @@ export const actions = () => {
 						const cartProductQuantiti = cartProduct.querySelector('.cart-list__quantiti span');
 						cartProductQuantiti.innerHTML = ++cartProductQuantiti.innerHTML;
 					};
-
-
 					productButton.classList.remove('_hold')
+
+					//=====delete=======
+				} else {
+					const cartProductQuantiti = cartProduct.querySelector(".cart-list__quantiti span");
+					cartProductQuantiti.innerHTML = --cartProductQuantiti.innerHTML;
 				}
+
 			};
 
 			let body = document.querySelector(".cart-header__body");
 
+
+			//================hidden/visible cart-body===================================
 			if (targetElement.classList.contains("cart-header__icon") || targetElement.closest(".cart-header__icon")) {
+				e.preventDefault();
 				body.querySelector(".cart-list__item") ? body.classList.toggle("_active") : null;
 			} else if (!targetElement.closest(".cart-header") && !targetElement.classList.contains("actions-product__button")) {
 				body.classList.remove("_active");
 			};
+			//-------------------------------------------------------------------
 
+			//================delete product on cart=============================
 			if (targetElement.classList.contains("cart-list__delele")) {
 				e.preventDefault();
-				console.log("click on delete button");
+				const productId = targetElement.closest(".cart-list__item").dataset.cartPid;
+				updateCart(targetElement, productId, false);
 			}
+			//--------------------------------------------------------------------
 
 
 
