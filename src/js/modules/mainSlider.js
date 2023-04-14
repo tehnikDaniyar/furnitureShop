@@ -1,16 +1,15 @@
-// import Swiper from "swiper/bundle"
-export const mainSlider = () => {
-	const swiper = new Swiper('.slider-main__body', {
+export const swiper = () => {
+	new Swiper('.slider-main__body', {
 		// Optional parameters
 		// observer: true, //auto update slider
 		// observeParents: true,
-		// loop: true,
+		loop: true,
 		// loopPreventsSliding: true,
 		slidesPerView: 1,
 		spaceBetween: 32,
 		// watchOverflow: true,
-		// speed: 800,
-		// parallax: true,
+		speed: 800,
+		parallax: true,
 		// preloadImages: false,
 		// loopedSlides: 5,
 
