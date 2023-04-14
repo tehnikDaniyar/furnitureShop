@@ -174,7 +174,7 @@ export const actions = () => {
 			};
 
 			function updateCart(productButton, productid, productAdd = true) {
-				const cart = document.querySelector('.cart-header');
+				const cart = document.querySelector('.cart-header__body');
 				const cartIcon = document.querySelector('.cart-header__icon');
 				const cartQuantiti = cartIcon.querySelector('span');
 				const cartProduct = document.querySelector(`[data-cart-pid="${productid}"]`);
@@ -218,7 +218,17 @@ export const actions = () => {
 				} else {
 					const cartProductQuantiti = cartProduct.querySelector(".cart-list__quantiti span");
 					cartProductQuantiti.innerHTML = --cartProductQuantiti.innerHTML;
-				}
+					--cartQuantiti.innerHTML;
+
+					if (!parseInt(cartProductQuantiti.innerHTML)) {
+						cartProduct.remove();
+					};
+
+					if (!parseInt(cartQuantiti.innerHTML)) {
+						cartQuantiti.remove();
+						cart.classList.remove("_active");
+					}
+				};
 
 			};
 
