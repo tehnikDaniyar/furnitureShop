@@ -1164,6 +1164,10 @@ a {
   border: 1px solid #E89F71;
   min-width: 245px;
 }
+.products__more._hold {
+  opacity: 2;
+  cursor: default;
+}
 
 .item-products {
   background-color: #F4F5F7;
@@ -1276,6 +1280,10 @@ a {
 .actions-product__button:not(:last-child) {
   margin-bottom: 24px;
 }
+.actions-product__button._hold {
+  opacity: 0.2;
+  cursor: default;
+}
 .actions-product__link {
   display: flex;
   align-items: center;
@@ -1302,4 +1310,63 @@ a {
   z-index: 100;
   transition: all 0.8s ease 0s;
   overflow: hidden;
+}
+
+.rooms {
+  background-color: #FCF8F3;
+  padding-top: clamp(1.875rem, 1.571rem + 1.52vw, 2.75rem);
+  padding-bottom: clamp(1.875rem, 1.571rem + 1.52vw, 2.75rem);
+}
+@media (min-width: 992px) {
+  .rooms__container {
+    display: flex;
+  }
+}
+.rooms__body {
+  flex: 0 0 37.5%;
+  position: relative;
+  z-index: 5;
+  align-self: center;
+}
+@media (min-width: 992px) {
+  .rooms__body {
+    padding-right: clamp(1.875rem, 0.788rem + 5.43vw, 5rem);
+  }
+}
+.rooms__title {
+  text-align: left;
+}
+.rooms__title:not(:last-child) {
+  margin-bottom: 8px;
+}
+.rooms__text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #616161;
+}
+.rooms__text:not(:last-child) {
+  margin-bottom: 24px;
+}
+.rooms__btn {
+  min-width: 176px;
+}
+.rooms__btn:hover {
+  color: white;
+  background-color: #b47b58;
+}
+.rooms__slider {
+  flex: 1 1 auto;
+  min-width: 0;
+  align-self: flex-start;
+}
+
+.slider-rooms__body {
+  overflow: hidden;
+}
+.slider-rooms__slide {
+  width: 372px;
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(25rem, 20.978rem + 20.11vw, 36.563rem);
 }

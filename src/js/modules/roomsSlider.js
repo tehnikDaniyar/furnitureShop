@@ -1,12 +1,12 @@
-export const swiperMain = () => {
-	new Swiper('.slider-main__body', {
+export const swiperRooms = () => {
+	new Swiper('.slider-rooms__body', {
 		// Optional parameters
 		// observer: true, //auto update slider
 		// observeParents: true,
 		loop: true,
 		// loopPreventsSliding: true,
-		slidesPerView: 1,
-		spaceBetween: 32,
+		slidesPerView: 'auto',
+		spaceBetween: 24,
 		// watchOverflow: true,
 		speed: 800,
 		parallax: true,
@@ -15,14 +15,14 @@ export const swiperMain = () => {
 
 		// If we need pagination
 		pagination: {
-			el: '.controls-slider-main__dotts',
+			el: '.slider-rooms__dotts',
 			clickable: true
 		},
 
 		// Navigation arrows
 		navigation: {
-			nextEl: '.slider-main .slider-arrow_next',
-			prevEl: '.slider-main .slider-arrow_prev',
+			nextEl: '.rooms__slider .slider-arrow_next',
+			prevEl: '.rooms__slider .slider-arrow_prev',
 		},
 
 		// And if we need scrollbar

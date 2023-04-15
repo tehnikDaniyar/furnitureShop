@@ -140,15 +140,10 @@ a {
 	&_prev {
 		transform: rotate(90deg);
 
-		&::before {
-			// display: none;
-		}
 	}
 
 	&_next {
 		transform: rotate(-90deg);
-
-		&::before {}
 	}
 
 	@media (any-hover: hover) {

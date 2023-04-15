@@ -40,6 +40,11 @@
 	&__more {
 		border: 1px solid $orangeColor;
 		min-width: 245px;
+
+		&._hold {
+			opacity: 2;
+			cursor: default;
+		}
 	}
 }
 
@@ -206,6 +211,11 @@
 
 		&:not(:last-child) {
 			margin-bottom: 24px;
+		}
+
+		&._hold {
+			opacity: 0.2;
+			cursor: default;
 		}
 	}
 
