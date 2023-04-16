@@ -78,7 +78,20 @@
 	// .slider-rooms__body
 
 	&__body {
-		overflow: hidden;
+		overflow: visible;
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100vw;
+			background-color: #FCF8F3;
+			transform: translateX(-100%);
+			z-index: 2;
+		}
 	}
 
 	// .slider-rooms__wrapper
@@ -92,13 +105,28 @@
 		position: relative;
 		overflow: hidden;
 		min-height: clamp(25rem, 20.978rem + 20.11vw, 36.563rem);
+
+
+		&.swiper-slide-active {
+			.slider-rooms__image {
+				min-height: clamp(25rem, 20.978rem + 20.11vw, 36.563rem);
+			}
+		}
 	}
 
 	// .slider-rooms__image
 
-	&__image {}
+	&__image {
+		min-height: clamp(25rem, 20.978rem + 20.11vw, 36.563rem);
+		transition: min-height 0.3s ease 0s;
 
-	// .slider-rooms__content
+		@media (min-width:767px) {
+			min-height: clamp(21.875rem, 18.918rem + 14.78vw, 30.375rem);
+		}
+
+	}
+
+	// .sliderms__content
 
 	&__content {}
 
