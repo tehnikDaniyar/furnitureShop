@@ -65,7 +65,13 @@
 
 	// .slider-rooms__title
 
-	&__title {}
+	&__title {
+		font-family: 'Gilroy';
+		font-weight: 600;
+		font-size: 28px;
+		line-height: 120%;
+		color: #3A3A3A;
+	}
 
 	// .slider-rooms__text
 
@@ -104,12 +110,12 @@
 		width: 372px;
 		position: relative;
 		overflow: hidden;
-		min-height: clamp(25rem, 20.978rem + 20.11vw, 36.563rem);
+		height: clamp(25rem, 20.978rem + 20.11vw, 36.563rem);
 
 
 		&.swiper-slide-active {
 			.slider-rooms__image {
-				min-height: clamp(25rem, 20.978rem + 20.11vw, 36.563rem);
+				height: clamp(25rem, 20.978rem + 20.11vw, 36.563rem);
 			}
 		}
 	}
@@ -117,18 +123,34 @@
 	// .slider-rooms__image
 
 	&__image {
-		min-height: clamp(25rem, 20.978rem + 20.11vw, 36.563rem);
-		transition: min-height 0.3s ease 0s;
+		height: clamp(25rem, 20.978rem + 20.11vw, 36.563rem);
+		transition: height 0.3s ease 0s;
 
 		@media (min-width:767px) {
-			min-height: clamp(21.875rem, 18.918rem + 14.78vw, 30.375rem);
+			height: clamp(21.875rem, 18.918rem + 14.78vw, 30.375rem);
 		}
 
 	}
 
 	// .sliderms__content
 
-	&__content {}
+	&__content {
+		position: absolute;
+		max-width: 217px;
+		left: clamp(0.938rem, 0.742rem + 0.98vw, 1.5rem);
+		bottom: clamp(0.938rem, 0.742rem + 0.98vw, 1.5rem);
+		padding: clamp(0.938rem, 0.568rem + 1.85vw, 2rem);
+
+		@supports((-webkit-backdrop-filter: blur(1.5px)) or (backdrop-filter: blur(1.5px))) {
+			background-color: rgba(255, 255, 255, 0.72);
+			backdrop-filter: blur(1.5px)
+		}
+
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 150%;
+		color: #616161;
+	}
 
 	// .slider-rooms__label
 
@@ -144,14 +166,22 @@
 }
 
 .label-slider {
-
+	font-family: 'Gilroy';
+	display: flex;
+	align-items: center;
+	gap: 8px;
 	// .label-slider__number
 
 	&__number {}
 
 	// .label-slider__line
 
-	&__line {}
+	&__line {
+		width: 27px;
+		height: 3px;
+		// background-color: #616161;
+		border-bottom: 1px solid #616161;
+	}
 
 	// .label-slider__text
 
