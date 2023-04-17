@@ -3,7 +3,7 @@ export const swiperTips = () => {
 		// Optional parameters
 		// observer: true, //auto update slider
 		// observeParents: true,
-		loop: true,
+		// loop: true,
 		// loopPreventsSliding: true,
 		slidesPerView: 3,
 		spaceBetween: 32,
