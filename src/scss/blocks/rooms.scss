@@ -17,9 +17,11 @@
 		position: relative;
 		z-index: 5;
 		align-self: center;
+		margin-bottom: 30px;
 
 		@media (min-width:992px) {
 			padding-right: clamp(1.875rem, 0.788rem + 5.43vw, 5rem);
+			margin-bottom: 0;
 		}
 	}
 
@@ -55,13 +57,18 @@
 
 	&__slider {
 		flex: 1 1 auto;
-		min-width: 0;
 		align-self: flex-start;
+		min-width: 0;
+
+		@media (max-width:420px) {
+			margin: 0 -15px;
+		}
 	}
 }
 
 
 .slider-rooms {
+	position: relative;
 
 	// .slider-rooms__title
 
@@ -81,11 +88,12 @@
 
 	&__btn {}
 
-	// .slider-rooms__body
+	// .slider-rooms__body (swiper)
 
 	&__body {
-		overflow: visible;
 		position: relative;
+		width: 100%;
+		// overflow: visible;
 
 		&::before {
 			content: "";
@@ -104,6 +112,8 @@
 
 	&__wrapper {}
 
+	//(swiper-wrapper)
+
 	// .slider-rooms__slide
 
 	&__slide {
@@ -111,6 +121,10 @@
 		position: relative;
 		overflow: hidden;
 		height: clamp(25rem, 20.978rem + 20.11vw, 36.563rem);
+
+		@media (max-width:420px) {
+			width: 100%;
+		}
 
 
 		&.swiper-slide-active {
@@ -150,6 +164,21 @@
 		font-size: 16px;
 		line-height: 150%;
 		color: #616161;
+
+		&::before {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			transform: translateX(100%);
+			width: 48px;
+			height: 48px;
+			background-color: $orangeColor;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+
+		}
 	}
 
 	// .slider-rooms__label
@@ -158,11 +187,40 @@
 
 	// .slider-rooms__arrows
 
-	&__arrows {}
+	&__arrows {
+		pointer-events: none;
+		position: absolute;
+		left: 24px;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 5;
+		justify-content: space-between;
+		width: calc(100% - 48px);
+
+		@media (min-width:1320px) {
+			left: -24px;
+			width: calc(100% + 48px);
+		}
+
+	}
 
 	// .slider-rooms__dotts
 
-	&__dotts {}
+	&__dotts {
+		@media (min-width:767px) {
+			position: absolute;
+			bottom: 30px !important;
+			left: 396px !important;
+			// width: 100vw;
+			max-width: 200px;
+		}
+
+		@media (max-width:767px) {
+			padding-top: 15px;
+			justify-content: center;
+			max-width: 100%;
+		}
+	}
 }
 
 .label-slider {
@@ -170,6 +228,11 @@
 	display: flex;
 	align-items: center;
 	gap: 8px;
+
+	&:not(:last-child) {
+		margin-bottom: 8px;
+	}
+
 	// .label-slider__number
 
 	&__number {}
