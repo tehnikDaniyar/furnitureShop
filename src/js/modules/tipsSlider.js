@@ -3,10 +3,10 @@ export const swiperTips = () => {
 		// Optional parameters
 		// observer: true, //auto update slider
 		// observeParents: true,
-		// loop: true,
+		loop: true,
 		// loopPreventsSliding: true,
-		slidesPerView: 3,
-		spaceBetween: 32,
+		// slidesPerView: 3,
+		// spaceBetween: 32,
 		// watchOverflow: true,
 		speed: 800,
 		parallax: true,
@@ -24,6 +24,24 @@ export const swiperTips = () => {
 			nextEl: '.tips__slider .slider-arrow_next',
 			prevEl: '.tips__slider .slider-arrow_prev',
 		},
+
+		breakpoints: {
+			// when window width is >= 320px
+			320: {
+				slidesPerView: 1.1,
+				spaceBetween: 15
+			},
+			// when window width is >= 480px
+			767: {
+				slidesPerView: 2,
+				spaceBetween: 20
+			},
+			// when window width is >= 640px
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 32
+			}
+		}
 
 		// And if we need scrollbar
 		// scrollbar: {

@@ -84,9 +84,28 @@
 
 	// .slider-tips__arrows
 
-	&__arrows {}
+	&__arrows {
+		position: absolute;
+		width: calc(100% + 48px);
+		left: 0;
+		top: 50%;
+		transform: translate(-24px, -50%);
+		z-index: 5;
+		justify-content: space-between;
+
+		@media (max-width:1320px) {
+			left: 48px;
+			width: calc(100% - 48px);
+		}
+
+		@media (max-width:767px) {
+			display: none;
+		}
+	}
 
 	// .slider-tips__dotts
 
-	&__dotts {}
+	&__dotts {
+		justify-content: center;
+	}
 }

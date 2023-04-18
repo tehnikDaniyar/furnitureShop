@@ -3,15 +3,15 @@ export const swiperRooms = () => {
 		// Optional parameters
 		// observer: true, //auto update slider
 		// observeParents: true,
-		// loop: true,
-		// loopPreventsSliding: true,
+		loop: true,
+		loopPreventsSliding: true,
 		slidesPerView: 'auto',
 		spaceBetween: 24,
 		// watchOverflow: true,
-		speed: 1200,
+		speed: 800,
 		parallax: true,
 		// preloadImages: false,
-		// loopedSlides: 4,
+		loopedSlides: 5,
 
 		// If we need pagination
 		pagination: {
