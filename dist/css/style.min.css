@@ -1469,7 +1469,7 @@ a {
     position: absolute;
     bottom: 30px !important;
     left: 396px !important;
-    max-width: 200px;
+    max-width: 400px;
   }
 }
 @media (max-width: 767px) {

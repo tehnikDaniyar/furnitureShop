@@ -4,14 +4,14 @@ export const swiperRooms = () => {
 		// observer: true, //auto update slider
 		// observeParents: true,
 		loop: true,
-		loopPreventsSliding: true,
+		// loopPreventsSliding: true,
 		slidesPerView: 'auto',
 		spaceBetween: 24,
 		// watchOverflow: true,
 		speed: 800,
 		parallax: true,
 		// preloadImages: false,
-		loopedSlides: 5,
+		// loopedSlides: 5,
 
 		// If we need pagination
 		pagination: {

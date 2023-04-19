@@ -1,0 +1,57 @@
+.furniture {
+
+	// .furniture__container
+
+	&__container {}
+
+	// .furniture__label
+
+	&__label {}
+
+	// .furniture__title
+
+	&__title {}
+
+	// .furniture__body
+
+	&__body {}
+
+	// .furniture__items
+
+	&__items {}
+
+	// .furniture__column
+
+	&__column {}
+
+	// .furniture__row
+
+	&__row {}
+}
+
+.row-furniture {
+
+	// .row-furniture_left-top
+
+	&_left-top {}
+
+	// .row-furniture_left-bottom
+
+	&_left-bottom {}
+
+	// .row-furniture_center
+
+	&_center {}
+
+	// .row-furniture_right-top
+
+	&_right-top {}
+
+	// .row-furniture_right-bottom
+
+	&_right-bottom {}
+
+	// .row-furniture__item
+
+	&__item {}
+}
