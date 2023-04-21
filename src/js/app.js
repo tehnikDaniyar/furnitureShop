@@ -5,6 +5,7 @@ import { swiperMain } from "./modules/mainSlider.js";
 import { headerObserver } from "./modules/headerObserver.js";
 import { swiperRooms } from "./modules/roomsSlider.js";
 import { swiperTips } from "./modules/tipsSlider.js";
+import { motionGallery } from "./modules/motionGallery.js";
 
 flsFunctions.isWebp();
 forInputs();
@@ -13,3 +14,4 @@ swiperMain();
 headerObserver();
 swiperRooms();
 swiperTips();
+motionGallery();
