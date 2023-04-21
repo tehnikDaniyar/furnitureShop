@@ -15,9 +15,25 @@ export const motionGallery = () => {
 			furnitureItemsWidth += column.offsetWidth;
 		});
 
-		console.log(furnitureItemsWidth);
+		let furnitureDifferent = furnitureItemsWidth - furniture.offsetWidth;
+		const distX = Math.floor(coordXprocent - positionX);
 
+		positionX = positionX + (distX * motionSpeed);
+		let position = furnitureDifferent / 200 * positionX;
+
+		furnitureItems.style.cssText = `transform: translate3d(${-position}px,0,0);`;
+
+		if (Math.abs(distX) > 0) {
+			requestAnimationFrame(setMouseGalleryStyle)
+		} else {
+			furniture.classList.remove("_init");
+		}
 	};
 
-	setMouseGalleryStyle();
+	furniture.addEventListener('mousemove', (e) => {
+
+	})
+
+	// setMouseGalleryStyle();
+
 }
