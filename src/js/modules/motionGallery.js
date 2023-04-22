@@ -21,6 +21,7 @@ export const motionGallery = () => {
 		positionX = positionX + (distX * motionSpeed);
 		let position = furnitureDifferent / 200 * positionX;
 
+		console.log(position);
 		furnitureItems.style.cssText = `transform: translate3d(${-position}px,0,0);`;
 
 		if (Math.abs(distX) > 0) {
@@ -31,9 +32,13 @@ export const motionGallery = () => {
 	};
 
 	furniture.addEventListener('mousemove', (e) => {
+		const furnitureWidth = furniture.offsetWidth;
+		const coordX = e.pageX - furnitureWidth / 2;
+		coordXprocent = coordX / furnitureWidth * 200;
 
-	})
-
-	// setMouseGalleryStyle();
-
+		if (!furniture.classList.contains("_init")) {
+			requestAnimationFrame(setMouseGalleryStyle);
+			furniture.classList.add("_init");
+		};
+	});
 }
